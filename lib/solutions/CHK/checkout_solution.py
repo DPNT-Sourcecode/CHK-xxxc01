@@ -9,7 +9,14 @@ def checkout(skus: str):
     
     sku_string_is_valid = True  # Assume valid 
 
-    total = 0
+    total = 0  # Start with 0 total
+
+    pricing_list = {
+        "A": 50,
+        "B": 30,
+        "C": 20,
+        "D": 15 
+    } 
 
     # If SKUs is empty or not a string reject with -1
     if skus == "" or isinstance(skus, str) is False:
@@ -18,18 +25,18 @@ def checkout(skus: str):
     for sku in skus:  # Iterate SKUs
         if sku not in allowed_skus:  # Check in allowed SKUs
             sku_string_is_valid = False
-        # else:
-        #     if 
+        else:
+
 
     if sku_string_is_valid == False:  # If contains foreign SKUs reject with -1
         return -1
 
-    else:
-        return True
+    return total
 
     
 
     
+
 
 
 
