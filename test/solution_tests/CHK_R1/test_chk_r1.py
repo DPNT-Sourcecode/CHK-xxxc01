@@ -15,3 +15,6 @@ class TestChk():
 
     def test_checkout_can_apply_discount_1(self):
         assert checkout("ABBCD") == 130
+
+    def test_checkout_can_apply_discount_2(self):
+        assert checkout("ABBBCD") == 160
