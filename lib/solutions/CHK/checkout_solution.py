@@ -47,21 +47,15 @@ def checkout(skus: str):
 
     # Now let's adjust for discounts by examining the discounts
     for _,v in discounts.items():
-        if v["items"] % v["deal"] == 0:
+        if v["items"] % v["deal"] == 0:  # Divides exactly
             discount = (v["items"] / v["deal"]) * v["discount"]
             print(discount)
             total += discount
+            print(total)
 
     return total
 
     
 
     
-
-
-
-
-
-
-
 
