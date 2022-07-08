@@ -16,4 +16,8 @@ def checkout(skus: str):
     if sku_string_is_valid == False:
         return -1
 
+    else:
+        return True
+
+
 
