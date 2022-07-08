@@ -13,11 +13,10 @@ def checkout(skus: str):
         if sku not in allowed_skus:  # Check in allowed SKUs
             sku_string_is_valid = False
 
-    if sku_string_is_valid == False:
+    if sku_string_is_valid == False:  # If contains foreign SKUs reject with -1
         return -1
 
-    else:
-        return True
+    
 
 
 
