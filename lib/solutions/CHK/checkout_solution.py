@@ -18,12 +18,12 @@ def checkout(skus: str):
 
     discounts = {
         "A" : {
-            "occurrences": 0,
+            "items": 0,
             "deal": 3, 
             "discount": -20
         }, # For every 3 save £20
         "B": {
-            "occurences": 0,
+            "items": 0,
             "deal": 2,
             "discount": -15
         }  # For every 2 save £15
@@ -40,22 +40,22 @@ def checkout(skus: str):
 
         else:  # Valid SKU
             if sku in discounts:  # This is a discounted SKU save for later
-                discounts[sku]["occurences"] += 1
+                discounts[sku]["items"] += 1
 
             total += pricing_list[sku]  # Keep track of totals
 
     # Now let's adjust for discounts by examining discounts
-    for _,v in discounts:
+    for _,v in discounts.items():
+        discounts = (v["deal"] / v["items"]) * v["discount"]
 
-
-
-                    
+        total += discounts
 
     return total
 
     
 
     
+
 
 
 
