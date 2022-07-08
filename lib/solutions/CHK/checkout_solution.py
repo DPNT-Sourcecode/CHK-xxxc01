@@ -6,8 +6,6 @@ def checkout(skus: str):
     
     # First validate that we have A, B, C or D
     allowed_skus = "ABCD"  # List of allowed SKUs
-    
-    sku_string_is_valid = True  # Assume valid 
 
     total = 0  # Start with 0 total
 
@@ -39,9 +37,8 @@ def checkout(skus: str):
                 if sku in discount[0]:  # This is a discounted SKU save for later
                     deals_memory.append(sku)
 
-            total += pricing_list[sku]
+            total += pricing_list[sku]  # Keep track of totals
                     
-
 
     return total
 

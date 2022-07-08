@@ -11,4 +11,7 @@ class TestChk():
         assert checkout("ABCDE") == -1
     
     def test_checkout_has_allowed_skus(self):
-        assert checkout("ABCD") == True
+        assert checkout("ABCD") == 115
+
+    def test_checkout_can_apply_discount_1(self):
+        assert checkout("ABBCD") == 130
