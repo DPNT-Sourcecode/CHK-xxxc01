@@ -44,9 +44,12 @@ def checkout(skus: str):
 
             total += pricing_list[sku]  # Keep track of totals
 
+    print(discounts)
+
     # Now let's adjust for discounts by examining discounts
     for _,v in discounts.items():
-        discounts = (v["deal"] / v["items"]) * v["discount"]
+        if v["deal"] % v["items"]:
+            discounts = (v["items"] / v["deal"]) * v["discount"]
 
         total += discounts
 
@@ -55,6 +58,7 @@ def checkout(skus: str):
     
 
     
+
 
 
 
