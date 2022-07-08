@@ -32,12 +32,18 @@ def checkout(skus: str):
         if sku not in allowed_skus:  # Check in allowed SKUs
             return -1  # If contains foreign SKUs reject with -1
 
-        else: # Valid SKU
+        else:  # Valid SKU
             for discount in discounts:
                 if sku in discount[0]:  # This is a discounted SKU save for later
                     deals_memory.append(sku)
 
             total += pricing_list[sku]  # Keep track of totals
+
+    
+    # Now let's adjust for discounts by examining deals
+    for deal in deals_memory:
+        
+        
                     
 
     return total
@@ -45,5 +51,6 @@ def checkout(skus: str):
     
 
     
+
 
 
