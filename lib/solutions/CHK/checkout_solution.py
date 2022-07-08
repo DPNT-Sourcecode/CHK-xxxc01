@@ -48,9 +48,12 @@ def checkout(skus: str):
 
     # Now let's adjust for discounts by examining the discounts
     for _,v in discounts.items():
-        if v["items"] % v["deal"] == 0:  # Divides exactly
-            discount = (v["items"] / v["deal"]) * v["discount"]
-            print(f'Discount: {discount}')
+        if v["items"] > v["deal"] == 0:  # Check actually exceeds threshold
+            if v["items"] % v["deal"] == 0:  # If exactly divisible then easily calculate
+                discount = (v["items"] / v["deal"]) * v["discount"]
+            else:
+                
+                print(f'Discount: {discount}')
             total += discount
 
     return total
@@ -58,5 +61,6 @@ def checkout(skus: str):
     
 
     
+
 
 
