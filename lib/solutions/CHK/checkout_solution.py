@@ -16,10 +16,16 @@ def checkout(skus: str):
         "D": 15 
     }
 
-    discounts = [
-        ("A", 3, -20), # For every 3 save £20
-        ("B", 2, -15)  # For every 2 save £15
-    ]
+    discounts = {
+        "A" : {
+            "occurences": 3, 
+            "discount": -20
+        }, # For every 3 save £20
+        "B": {
+            "occurences": 2,
+            "discount": -15
+        }  # For every 2 save £15
+    }
 
     deals_memory = []  # Hold any deals in here to check for later
 
@@ -43,7 +49,7 @@ def checkout(skus: str):
     # Now let's adjust for discounts by examining deals
     for deal in deals_memory:
         
-        
+
                     
 
     return total
@@ -51,6 +57,7 @@ def checkout(skus: str):
     
 
     
+
 
 
 
