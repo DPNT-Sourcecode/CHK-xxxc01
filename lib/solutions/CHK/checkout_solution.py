@@ -16,7 +16,14 @@ def checkout(skus: str):
         "B": 30,
         "C": 20,
         "D": 15 
-    } 
+    }
+
+    discounts = [
+        ("A", 3, -20), # For every 3 save £20
+        ("B", 2, -15)  # For every 2 save £15
+    ]
+
+    deals_memory = []  # Hold any deals in here to check for later
 
     # If SKUs is empty or not a string reject with -1
     if skus == "" or isinstance(skus, str) is False:
@@ -24,20 +31,14 @@ def checkout(skus: str):
     
     for sku in skus:  # Iterate SKUs
         if sku not in allowed_skus:  # Check in allowed SKUs
-            sku_string_is_valid = False
-        else:
+            return -1  # If contains foreign SKUs reject with -1
+        else: # Valid SKU
+            
 
-
-    if sku_string_is_valid == False:  # If contains foreign SKUs reject with -1
-        return -1
 
     return total
 
     
 
     
-
-
-
-
 
