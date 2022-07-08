@@ -62,5 +62,3 @@ def checkout(skus: str):
 
     
 
-
-
