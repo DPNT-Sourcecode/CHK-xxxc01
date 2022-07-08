@@ -18,16 +18,16 @@ def checkout(skus: str):
 
     discounts = {
         "A" : {
-            "occurences": 3, 
+            "occurrences": 0,
+            "deal": 3, 
             "discount": -20
         }, # For every 3 save £20
         "B": {
-            "occurences": 2,
+            "occurences": 0,
+            "deal": 2,
             "discount": -15
         }  # For every 2 save £15
     }
-
-    deals_memory = []  # Hold any deals in here to check for later
 
     # If SKUs is empty or not a string reject with -1
     if skus == "" or isinstance(skus, str) is False:
@@ -39,16 +39,15 @@ def checkout(skus: str):
             return -1  # If contains foreign SKUs reject with -1
 
         else:  # Valid SKU
-            for discount in discounts:
-                if sku in discount[0]:  # This is a discounted SKU save for later
-                    deals_memory.append(sku)
+            if sku in discounts:  # This is a discounted SKU save for later
+                discounts[sku]["occurences"] += 1
 
             total += pricing_list[sku]  # Keep track of totals
 
-    
-    # Now let's adjust for discounts by examining deals
-    for deal in deals_memory:
-        
+    # Now let's adjust for discounts by examining discounts
+    for _,v in discounts:
+
+
 
                     
 
@@ -57,6 +56,7 @@ def checkout(skus: str):
     
 
     
+
 
 
 
