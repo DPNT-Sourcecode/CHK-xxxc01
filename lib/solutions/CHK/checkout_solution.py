@@ -50,6 +50,7 @@ def checkout(skus: str):
     for _,v in discounts.items():
         if v["items"] % v["deal"] == 0:  # Divides exactly
             discount = (v["items"] / v["deal"]) * v["discount"]
+            print(f'Discount: {discount}')
             total += discount
 
     return total
